@@ -9,7 +9,7 @@ public class Demo
             SingletonThreadSafeLockFree singletonThreadSafeLockFree = SingletonThreadSafeLockFree.getInstance();
             singletonThreadSafeLockFree.doSomething();
         };
-        Runnable runnable2 = ()->{
+        Runnable runnable2 = () -> {
             SingletonThreadSafeLockFree singletonThreadSafeLockFree = SingletonThreadSafeLockFree.getInstance();
             singletonThreadSafeLockFree.doSomething();
         };
