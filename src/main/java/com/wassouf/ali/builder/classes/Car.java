@@ -43,34 +43,34 @@ public abstract class Car implements Vehicle
     }
 
 
-    public static abstract class Builder
+    public static abstract class Builder<T extends Car>
     {
         protected String color;
         protected String manufacturer;
         protected int yearModel;
 
 
-        public Builder setColor(String color)
+        public Builder<T> setColor(String color)
         {
             this.color = color;
             return this;
         }
 
 
-        public Builder setManufacturer(String manufacturer)
+        public Builder<T> setManufacturer(String manufacturer)
         {
             this.manufacturer = manufacturer;
             return this;
         }
 
 
-        public Builder setYearModel(int yearModel)
+        public Builder<T> setYearModel(int yearModel)
         {
             this.yearModel = yearModel;
             return this;
         }
 
-        public abstract Car build();
+        public abstract T build();
 
     }
 }

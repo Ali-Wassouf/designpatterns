@@ -1,6 +1,6 @@
 package com.wassouf.ali.builder.classes;
 
-public interface Chargable
+public interface Chargeable
 {
     void setBatteryCapacity(double capacity);
 }

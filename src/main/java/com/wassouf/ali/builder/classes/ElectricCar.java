@@ -1,6 +1,6 @@
 package com.wassouf.ali.builder.classes;
 
-public class ElectricCar extends Car implements Chargable
+public class ElectricCar extends Car implements Chargeable
 {
     private double batteryCapacity;
 
