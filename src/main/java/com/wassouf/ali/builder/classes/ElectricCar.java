@@ -18,7 +18,7 @@ public class ElectricCar extends Car implements Chargeable
     }
 
 
-   public static class Builder extends Car.Builder
+   public static class Builder extends Car.Builder<ElectricCar>
     {
         private double batteryCapacity;
 

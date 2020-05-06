@@ -18,7 +18,7 @@ public class GasolineCar extends Car implements Fuelable
     }
 
 
-    public static class Builder extends Car.Builder
+    public static class Builder extends Car.Builder<GasolineCar>
     {
         private double gasTankCapacity;
 
