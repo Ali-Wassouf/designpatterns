@@ -1,8 +1,56 @@
 package com.wassouf.ali.builder.classes;
 
-public class GasolineCar extends Car implements Fuelable
+public class GasolineCar implements Fuelable, Car
 {
     private double gasTankCapacity;
+    private String color;
+    private String manufacturer;
+    private int yearModel;
+
+
+    public double getGasTankCapacity()
+    {
+        return gasTankCapacity;
+    }
+
+
+    public String getColor()
+    {
+        return color;
+    }
+
+
+    public GasolineCar setColor(String color)
+    {
+        this.color = color;
+        return this;
+    }
+
+
+    public String getManufacturer()
+    {
+        return manufacturer;
+    }
+
+
+    public GasolineCar setManufacturer(String manufacturer)
+    {
+        this.manufacturer = manufacturer;
+        return this;
+    }
+
+
+    public int getYearModel()
+    {
+        return yearModel;
+    }
+
+
+    public GasolineCar setYearModel(int yearModel)
+    {
+        this.yearModel = yearModel;
+        return this;
+    }
 
 
     @Override
@@ -18,10 +66,12 @@ public class GasolineCar extends Car implements Fuelable
     }
 
 
-    public static class Builder extends Car.Builder<GasolineCar>
+    public static class Builder
     {
         private double gasTankCapacity;
-
+        private String color;
+        private String manufacturer;
+        private int yearModel;
 
         public Builder setGasTankCapacity(double gasTankCapacity)
         {
@@ -30,7 +80,27 @@ public class GasolineCar extends Car implements Fuelable
         }
 
 
-        @Override
+        public Builder setColor(String color)
+        {
+            this.color = color;
+            return this;
+        }
+
+
+        public Builder setManufacturer(String manufacturer)
+        {
+            this.manufacturer = manufacturer;
+            return this;
+        }
+
+
+        public Builder setYearModel(int yearModel)
+        {
+            this.yearModel = yearModel;
+            return this;
+        }
+
+
         public GasolineCar build()
         {
             GasolineCar car = new GasolineCar();

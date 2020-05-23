@@ -1,8 +1,11 @@
 package com.wassouf.ali.builder.classes;
 
-public class ElectricCar extends Car implements Chargeable
+public class ElectricCar implements Chargeable, Car
 {
     private double batteryCapacity;
+    private String color;
+    private String manufacturer;
+    private int yearModel;
 
 
     @Override
@@ -12,16 +15,69 @@ public class ElectricCar extends Car implements Chargeable
     }
 
 
+    public double getBatteryCapacity()
+    {
+        return batteryCapacity;
+    }
+
+
+
+    public String getColor()
+    {
+        return color;
+    }
+
+
+
+    public ElectricCar setColor(String color)
+    {
+        this.color = color;
+        return this;
+    }
+
+
+
+    public String getManufacturer()
+    {
+        return manufacturer;
+    }
+
+
+
+    public ElectricCar setManufacturer(String manufacturer)
+    {
+        this.manufacturer = manufacturer;
+        return this;
+    }
+
+
+
+    public int getYearModel()
+    {
+        return yearModel;
+    }
+
+
+
+    public ElectricCar setYearModel(int yearModel)
+    {
+        this.yearModel = yearModel;
+        return this;
+    }
+
+
     public static Builder getBuilder()
     {
         return new Builder();
     }
 
 
-   public static class Builder extends Car.Builder<ElectricCar>
+   public static class Builder
     {
         private double batteryCapacity;
-
+        private String color;
+        private String manufacturer;
+        private int yearModel;
 
         public Builder setBatteryCapacity(double batteryCapacity)
         {
@@ -30,7 +86,27 @@ public class ElectricCar extends Car implements Chargeable
         }
 
 
-        @Override
+        public Builder setColor(String color)
+        {
+            this.color = color;
+            return this;
+        }
+
+
+        public Builder setManufacturer(String manufacturer)
+        {
+            this.manufacturer = manufacturer;
+            return this;
+        }
+
+
+        public Builder setYearModel(int yearModel)
+        {
+            this.yearModel = yearModel;
+            return this;
+        }
+
+
         public ElectricCar build()
         {
             ElectricCar car = new ElectricCar();
