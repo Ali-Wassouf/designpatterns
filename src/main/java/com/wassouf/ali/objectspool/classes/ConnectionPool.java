@@ -10,23 +10,22 @@ import lombok.EqualsAndHashCode;
 @Data
 public class ConnectionPool extends ObjectPool<Connection>
 {
-    private String host;
+    private String url;
     private String username;
     private String password;
 
 
-    public ConnectionPool(String host, String username, String password, String driver)
+    public ConnectionPool(String url, String username, String password, String driver)
     {
-        super();
         try
         {
             Class.forName(driver);
         }
-        catch (Exception e)
+        catch (ClassNotFoundException e)
         {
             e.printStackTrace();
         }
-        this.host = host;
+        this.url = url;
         this.username = username;
         this.password = password;
 
@@ -38,12 +37,12 @@ public class ConnectionPool extends ObjectPool<Connection>
     {
         try
         {
-            return (DriverManager.getConnection(host, username, password));
+            return DriverManager.getConnection(url, username, password);
         }
-        catch (SQLException e)
+        catch (SQLException throwable)
         {
-            e.printStackTrace();
-            return (null);
+            throwable.printStackTrace();
+            return null;
         }
     }
 
@@ -53,12 +52,12 @@ public class ConnectionPool extends ObjectPool<Connection>
     {
         try
         {
-            return (!o.isClosed());
+            return !o.isClosed();
         }
-        catch (SQLException e)
+        catch (SQLException throwables)
         {
-            e.printStackTrace();
-            return (false);
+            throwables.printStackTrace();
+            return false;
         }
     }
 
@@ -70,9 +69,9 @@ public class ConnectionPool extends ObjectPool<Connection>
         {
             o.close();
         }
-        catch (SQLException e)
+        catch (SQLException throwables)
         {
-            e.printStackTrace();
+            throwables.printStackTrace();
         }
     }
 }
