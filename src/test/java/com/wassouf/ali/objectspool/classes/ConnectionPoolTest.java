@@ -13,11 +13,14 @@ public class ConnectionPoolTest
 
     @Rule
     public ExpectedException exceptionRule = ExpectedException.none();
+
+
     @Test
     public void testCreatingConnectionPool()
     {
         Assert.assertNotNull(connectionPool);
     }
+
 
     @Test
     public void testCreatingConnectionFromConnectionPool()
@@ -32,5 +35,13 @@ public class ConnectionPoolTest
         Connection connection = connectionPool.create();
         connection.close();
         Assert.assertFalse(connectionPool.validate(connection));
+    }
+
+
+    @Test
+    public void testCheckingOutConnection()
+    {
+        Connection connection = connectionPool.checkOut();
+        Assert.assertNotNull(connection);
     }
 }
