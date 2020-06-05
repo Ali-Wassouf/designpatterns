@@ -1,4 +1,4 @@
-package com.wassouf.ali.chainofresponsibilities.classes;
+package com.wassouf.ali.chainofresponsibilities;
 
 import com.wassouf.ali.chainofresponsibilities.Client;
 
