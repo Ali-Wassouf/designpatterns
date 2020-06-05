@@ -1,10 +1,9 @@
 package com.wassouf.ali.chainofresponsibilities;
 
-import com.wassouf.ali.chainofresponsibilities.Client;
-
 public class Main
 {
-    public static void main(String... args){
+    public static void main(String... args)
+    {
         Client client = new Client();
 
         System.out.println(client.withdraw(920));
