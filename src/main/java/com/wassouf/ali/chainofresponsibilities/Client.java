@@ -8,9 +8,9 @@ import java.util.Map;
 
 public class Client
 {
-    private Dispenser fiftyDollarBillDispenser;
-    private Dispenser twentyDollarBillDispenser;
-    private Dispenser tenDollarBillDispenser;
+    private final Dispenser fiftyDollarBillDispenser;
+    private final Dispenser twentyDollarBillDispenser;
+    private final Dispenser tenDollarBillDispenser;
 
     public Client(){
         fiftyDollarBillDispenser = new FiftyDollarBillDispenser();

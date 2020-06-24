@@ -1,0 +1,1 @@
+In a classic implementation, the command pattern requires implementing four components: the **Command**, the **Receiver**, the **Invoker**, and the **Client**.
