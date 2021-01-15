@@ -1,4 +1,4 @@
-package com.wassouf.ali.builder.classes;
+package com.wassouf.ali.builder.car.classes;
 
 public interface Fuelable
 {

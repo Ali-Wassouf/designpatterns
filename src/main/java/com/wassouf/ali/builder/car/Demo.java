@@ -1,8 +1,8 @@
-package com.wassouf.ali.builder;
+package com.wassouf.ali.builder.car;
 
-import com.wassouf.ali.builder.classes.Car;
-import com.wassouf.ali.builder.classes.ElectricCar;
-import com.wassouf.ali.builder.classes.GasolineCar;
+import com.wassouf.ali.builder.car.classes.Car;
+import com.wassouf.ali.builder.car.classes.ElectricCar;
+import com.wassouf.ali.builder.car.classes.GasolineCar;
 
 public class Demo
 {

@@ -1,17 +1,25 @@
-package com.wassouf.ali.builder.classes;
+package com.wassouf.ali.builder.car.classes;
 
-public class GasolineCar implements Fuelable, Car
+public class ElectricCar implements Chargeable, Car
 {
-    private double gasTankCapacity;
+    private double batteryCapacity;
     private String color;
     private String manufacturer;
     private int yearModel;
 
 
-    public double getGasTankCapacity()
+    @Override
+    public void setBatteryCapacity(double capacity)
     {
-        return gasTankCapacity;
+        this.batteryCapacity = capacity;
     }
+
+
+    public double getBatteryCapacity()
+    {
+        return batteryCapacity;
+    }
+
 
 
     public String getColor()
@@ -20,11 +28,13 @@ public class GasolineCar implements Fuelable, Car
     }
 
 
-    public GasolineCar setColor(String color)
+
+    public ElectricCar setColor(String color)
     {
         this.color = color;
         return this;
     }
+
 
 
     public String getManufacturer()
@@ -33,11 +43,13 @@ public class GasolineCar implements Fuelable, Car
     }
 
 
-    public GasolineCar setManufacturer(String manufacturer)
+
+    public ElectricCar setManufacturer(String manufacturer)
     {
         this.manufacturer = manufacturer;
         return this;
     }
+
 
 
     public int getYearModel()
@@ -46,17 +58,11 @@ public class GasolineCar implements Fuelable, Car
     }
 
 
-    public GasolineCar setYearModel(int yearModel)
+
+    public ElectricCar setYearModel(int yearModel)
     {
         this.yearModel = yearModel;
         return this;
-    }
-
-
-    @Override
-    public void setGasTankCapacity(double capacity)
-    {
-        this.gasTankCapacity = capacity;
     }
 
 
@@ -66,16 +72,16 @@ public class GasolineCar implements Fuelable, Car
     }
 
 
-    public static class Builder
+   public static class Builder
     {
-        private double gasTankCapacity;
+        private double batteryCapacity;
         private String color;
         private String manufacturer;
         private int yearModel;
 
-        public Builder setGasTankCapacity(double gasTankCapacity)
+        public Builder setBatteryCapacity(double batteryCapacity)
         {
-            this.gasTankCapacity = gasTankCapacity;
+            this.batteryCapacity = batteryCapacity;
             return this;
         }
 
@@ -101,10 +107,10 @@ public class GasolineCar implements Fuelable, Car
         }
 
 
-        public GasolineCar build()
+        public ElectricCar build()
         {
-            GasolineCar car = new GasolineCar();
-            car.setGasTankCapacity(this.gasTankCapacity);
+            ElectricCar car = new ElectricCar();
+            car.setBatteryCapacity(this.batteryCapacity);
             car.setColor(this.color);
             car.setManufacturer(this.manufacturer);
             car.setYearModel(this.yearModel);
@@ -116,8 +122,8 @@ public class GasolineCar implements Fuelable, Car
     @Override
     public String toString()
     {
-        return "GasolineCar{" +
-            "gasTankCapacity=" + gasTankCapacity +
+        return "ElectricCar{" +
+            "batteryCapacity=" + batteryCapacity +
             '}';
     }
 }
